@@ -13,10 +13,10 @@ import random
 '''
 It is a general env for searching target object.
 
-State : raw color image and depth (640x480) 
-Action:  (linear velocity ,angle velocity , trigger) 
+State : raw color image and depth (640x480)
+Action:  (linear velocity ,angle velocity , trigger)
 Done : Collision or get target place or False trigger three times.
-Task: Learn to avoid obstacle and search for a target object in a room, 
+Task: Learn to avoid obstacle and search for a target object in a room,
       you can select the target name according to the Recommend object list as below
 
 Recommend object list in RealisticRendering
@@ -27,9 +27,9 @@ Recommend object list in Arch1
 'BP_door_001_C_0','BP_door_002_C_0'
 '''
 
-class UnrealCvSearch_base(gym.Env):
+class BlueCoastBase(gym.Env):
    def __init__(self,
-                setting_file = 'search_rr_plant78.json',
+                setting_file = 'behave_bc_v0.json',
                 reset_type = 'waypoint',       # testpoint, waypoint,
                 augment_env = None,   #texture, target, light
                 test = True,               # if True will use the test_xy as start point
@@ -296,5 +296,3 @@ class UnrealCvSearch_base(gym.Env):
        import gym_unrealcv
        gympath = os.path.dirname(gym_unrealcv.__file__)
        return os.path.join(gympath, 'envs/setting', filename)
-
-
