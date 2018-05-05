@@ -3,7 +3,21 @@ import logging
 logger = logging.getLogger(__name__)
 use_docker = False  # True: use nvidia docker   False: do not use nvidia-docker
 
+# BlueCoast behave v0
+register(
+    id='behave-bc-v0',
+    entry_point='gym_unrealcv.envs:BlueCoastBase',
+    kwargs = {'setting_file' : 'behave_bc_v0.json',
+              'reset_type' : 'waypoint',
+              'test': False,
+              'action_type' : 'discrete',
+              'observation_type': 'color',
+              'reward_type': 'bbox',
+              'docker': use_docker
+              },
+    max_episode_steps = 1000000
 
+)
 
 # RrDoor41
 register(

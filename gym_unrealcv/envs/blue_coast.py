@@ -81,7 +81,7 @@ class BlueCoastBase(gym.Env):
      # set start position
      self.trigger_count  = 0
      current_pose = self.unrealcv.get_pose(self.cam_id)
-     current_pose[2] = self.height
+     # current_pose[2] = self.height
      self.unrealcv.set_location(self.cam_id,current_pose[:3])
 
      self.count_steps = 0

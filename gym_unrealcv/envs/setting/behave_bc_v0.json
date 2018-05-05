@@ -12,8 +12,8 @@
 	"waypoint_th": 100,
 	"reward_factor": 10,
 	"targets": [
-        "SM_Plant_7",
-		"SM_Plant_8"
+        "male_talking_both_hands_Anim",
+		"male_talking_single_hand_Anim"
 	],
 	"test_xy": [
 		[-106.195, 437.424],

@@ -1,0 +1,56 @@
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+*.pyc
+
+*.aux
+*.log
+*.synctex.gz
+*.toc
+
+# Temporary files #
+###################
+*.swp
+*.swo
+*~
+*#
+.#*
+
+# Packages #
+############
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
+
+# OS generated files #
+######################
+.DS_Store*
+ehthumbs.db
+Icon?
+Thumbs.db
+
+
+#Project specifics
+gym_unrealcv/envs/UnrealEnv/*
+gym_unrealcv/envs/UnrealEnv
+*.pyc
+gym_unrealcv.egg-info
+*.out
+*core
