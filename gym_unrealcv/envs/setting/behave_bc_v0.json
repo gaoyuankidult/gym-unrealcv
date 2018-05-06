@@ -1,7 +1,7 @@
 {
 	"env_name": "BlueCoast",
 	"old_env_bin": "RealisticRendering_RL_3.10/RealisticRendering/Binaries/Linux/RealisticRendering",
-	"env_bin": "BlueCoast/LinuxNoEditor/Engine/Binaries/Linux/UE4Game",
+	"env_bin": "BlueCoast/LinuxNoEditor/bluecoast/Binaries/Linux/bluecoast",
 	"cam_id": 0,
 	"height": 40,
   	"pitch": 0,
@@ -12,8 +12,8 @@
 	"waypoint_th": 100,
 	"reward_factor": 10,
 	"targets": [
-        "male_talking_both_hands_Anim",
-		"male_talking_single_hand_Anim"
+        "one_hand_male_talking_Anim_5",
+		"two_hands_male_talking_Anim_2"
 	],
 	"test_xy": [
 		[-106.195, 437.424],
