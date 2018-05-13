@@ -10,7 +10,7 @@ register(
     kwargs = {'setting_file' : 'behave_bc_v0.json',
               'reset_type' : 'waypoint',
               'test': False,
-              'action_type' : 'discrete',
+              'action_type' : 'continuous',
               'observation_type': 'color',
               'reward_type': 'bbox',
               'docker': use_docker

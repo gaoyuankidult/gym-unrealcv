@@ -13,7 +13,6 @@
 	"reward_factor": 10,
 	"targets": [
         "one_hand_male_talking_Anim_5",
-		"two_hands_male_talking_Anim_2"
 	],
 	"test_xy": [
 		[-106.195, 437.424],

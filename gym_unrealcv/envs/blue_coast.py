@@ -73,6 +73,9 @@ class BlueCoastBase(gym.Env):
      assert self.observation_type == 'color' or self.observation_type == 'depth' or self.observation_type == 'rgbd'
      self.observation_shape = self.unrealcv.define_observation(self.cam_id,self.observation_type)
 
+     # add space definition
+     self.observation_space = self.unrealcv.define_observation(self.cam_id,self.observation_type)
+
      # define reward type
      # distance, bbox, bbox_distance,
      self.reward_type = reward_type
