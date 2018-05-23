@@ -81,7 +81,7 @@ class Actor(Model):
             x = tf.layers.dropout(x, rate=0.2)
 
             x = tc.layers.flatten(x)
-            x = tf.layers.dense(x, 256, kernel_initializer=init_dense)
+            x = tf.layers.dense(x, 512, kernel_initializer=init_dense)
             # x = tc.layers.batch_norm(x,
             #                       center=True, scale=True,
             #                       reuse=tf.AUTO_REUSE,
@@ -91,7 +91,7 @@ class Actor(Model):
             x = tf.nn.elu(x)
             x = tf.layers.dropout(x, rate=0.2)
 
-            x = tf.layers.dense(x, 256, kernel_initializer=init_dense)
+            x = tf.layers.dense(x, 512, kernel_initializer=init_dense)
             # x = tc.layers.batch_norm(x,
             #                       center=True, scale=True,
             #                       reuse=tf.AUTO_REUSE,
@@ -165,7 +165,7 @@ class Critic(Model):
 
             x = tc.layers.flatten(x)
             x = tf.concat([x, action], axis=-1)
-            x = tf.layers.dense(x, 256, kernel_initializer=init_dense)
+            x = tf.layers.dense(x, 512, kernel_initializer=init_dense)
             # x = tc.layers.batch_norm(x,
             #                       center=True, scale=True,
             #                       reuse=tf.AUTO_REUSE,
@@ -175,7 +175,7 @@ class Critic(Model):
             x = tf.nn.elu(x)
             x = tf.layers.dropout(x, rate=0.2)
 
-            x = tf.layers.dense(x, 256, kernel_initializer=init_dense)
+            x = tf.layers.dense(x, 512, kernel_initializer=init_dense)
             # x = tc.layers.batch_norm(x,
             #                       center=True, scale=True,
             #                       reuse=tf.AUTO_REUSE,

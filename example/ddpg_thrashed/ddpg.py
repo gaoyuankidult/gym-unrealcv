@@ -276,7 +276,7 @@ class DDPG(object):
         if epsilon_mode:
             if np.random.rand() < self.epsilon() or self.policy_learning_delay > 0:
                 epsilon = True
-                action = np.random.rand(*self.action_shape)
+                action = 1.0 - 2.0 * np.random.rand(*self.action_shape)
                 feed_dict = {
                             self.obs0: [self.preprocessor(obs)],
                             self.actions : [action]
