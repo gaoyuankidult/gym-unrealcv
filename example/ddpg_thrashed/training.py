@@ -143,7 +143,7 @@ def train(env, preprocessor, obs_shape, nb_epochs, nb_epoch_cycles, render_eval,
 
                     assert max_action.shape == action.shape
                     new_obs, r, done, info = env.step(scale_action * action + middle_action)  # scale for execution in env (as far as DDPG is concerned, every action is in [-1, 1])
-                    print ( "{}Q:{}({}) \t A:{} \t-> R:{}".format("!"*int(epsilon),q,q_target,action,r) )
+                    # print ( "{}Q:{}({}) \t A:{} \t-> R:{}".format("!"*int(epsilon),q,q_target,action,r) )
                     t += 1
 
                     episode_reward += r
