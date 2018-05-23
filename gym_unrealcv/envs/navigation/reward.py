@@ -6,6 +6,7 @@ class Reward():
         self.reward_factor = setting['reward_factor']
         self.reward_th = setting['reward_th']
         self.dis2target_last = 0
+        self.dis2target_last2 = 0
 
 
     def reward_bbox(self, boxes):
@@ -39,6 +40,13 @@ class Reward():
         reward = (self.dis2target_last - dis2target_now) / max(self.dis2target_last, 100)
         self.dis2target_last = dis2target_now
 
+        return reward
+
+    def reward_distance_positive(self, dis2target_now, bias=0.0):
+        reward = max(0, (self.dis2target_last2 - dis2target_now) / max(self.dis2target_last2, 100))
+        self.dis2target_last2 = dis2target_now
+        if reward == 0:
+            reward = bias
         return reward
 
     def reward_move(self):

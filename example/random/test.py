@@ -60,16 +60,7 @@ if __name__ == '__main__':
             ob, reward, done, info = env.step(action)
 
 
-            step = dict(
-                img_name = str(info['Steps'])+'.jpg',
-                arm_pose=info['ArmPose'],
-                target_pose = info['TargetPose'],
-                grip_position = info['GripPosition'],
-                reward=info['Reward'],
-                action=info['Action'],
-                bbox=info['Bbox'],
-                collision=info['Collision']
-            )
+            z)
             img_path=os.path.join(foldername,step['img_name'])
             cv2.imwrite(img_path,ob)
             eps.append(step)
@@ -84,5 +75,3 @@ if __name__ == '__main__':
 
     # Close the env and write monitor result info to disk
     env.close()
-
-

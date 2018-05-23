@@ -10,7 +10,7 @@ register(
     kwargs = {'setting_file' : 'behave_bc_v0.json',
               'reset_type' : 'waypoint',
               'test': False,
-              'action_type' : 'continuous',
+              'action_type' : 'discrete',
               'observation_type': 'color',
               'reward_type': 'bbox',
               'docker': use_docker
@@ -34,7 +34,20 @@ register(
     max_episode_steps = 1000000
 
 )
+register(
+    id='Search-RrDoorDiscrete-datagatherer-v0',
+    entry_point='gym_unrealcv.envs:UnrealCvSearch_base',
+    kwargs = {'setting_file' : 'search_rr_door41.json',
+              'reset_type' : 'waypoint',
+              'test': False,
+              'action_type' : 'discrete',
+              'observation_type': 'rgbd',
+              'reward_type': 'bbox',
+              'docker': use_docker
+              },
+    max_episode_steps = 1000000
 
+)
 
 
 register(
@@ -50,6 +63,27 @@ register(
               },
     max_episode_steps = 1000000
 )
+
+
+
+'''
+In v1 we get no punishment for crashing (but episode ends).
+We get slight nudge towards the door, and we can stay in the door area and get lots of score.
+'''
+register(
+    id='Search-RrDoorContinuous-v1',
+    entry_point='gym_unrealcv.envs:UnrealCvSearch_base',
+    kwargs = {'setting_file' : 'search_rr_door41.json',
+              'reset_type' : 'waypoint',
+              'test': False,
+              'action_type' : 'continuous',
+              'observation_type': 'color',
+              'reward_type': 'distance_positive',
+              'docker': use_docker
+              },
+    max_episode_steps = 1000000
+)
+
 register(
     id='Search-RrDoorDiscreteTest-v0',
     entry_point='gym_unrealcv.envs:UnrealCvSearch_base',
